@@ -1,0 +1,46 @@
+### POST A USER
+curl -X POST http://localhost:5000/users \
+-H "Content-Type: application/json" \
+-d '{
+    "username": "admin",
+    "nama": "Admin",
+    "jenisKelamin": "-",
+    "password": "admin",
+    "confPassword": "admin",
+    "role": "Admin"
+}'
+
+### GET ALL USERS
+GET http://localhost:5000/users
+
+### GET SINGLE USER
+GET http://localhost:5000/users/4dd63627-414c-4985-ad0f-796320c941d7
+
+### EDIT A USER
+PATCH http://localhost:5000/users/4dd63627-414c-4985-ad0f-796320c941d7
+Content-Type: application/json
+{
+    "username": "rizkylsmp",
+    "nama": "Rizky Lanang Sadana Mulyono Putra",
+    "jenisKelamin": "Pria",
+    "password": "",
+    "confPassword": "",
+    "role": "admin"
+}
+
+### DELETE A USER
+DELETE http://localhost:5000/users/0ffacec2-2a62-4012-88f8-58db4ea3fe9b
+
+### LOGIN USER
+curl -X POST http://localhost:5000/login \
+-H "Content-Type: application/json" \
+-d '{
+    "username": "admin",
+    "password": "admin"
+}'
+
+### ME USER
+GET http://localhost:5000/me
+
+### LOGOUT USER
+DELETE http://localhost:5000/logout
